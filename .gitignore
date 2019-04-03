@@ -1,2 +1,3 @@
-bin/sudoku/*
+bin/sudoku*
 lib*
+*.class
