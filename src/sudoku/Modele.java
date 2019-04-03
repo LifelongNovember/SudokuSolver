@@ -1,6 +1,6 @@
 package sudoku;
 
-public class Sudoku {
+public class Modele {
 
   public static int[][] grille =
   {
@@ -72,7 +72,7 @@ public static boolean solve(int i, int j) {
       }
     }
   }
-
+  
   else {
     for(int v = 1; v <= 9; v++) {
       if(estPossible(v, i, j)) {
