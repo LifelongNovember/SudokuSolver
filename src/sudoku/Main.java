@@ -5,29 +5,21 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import java.io.InputStream;
 
 public class Main extends Application {
-  
-  @Override
-  public void start(Stage stage) throws Exception {
-    InputStream is = getClass().getResourceAsStream("../SudokuSolver.fxml");
-    FXMLLoader fxmll = new FXMLLoader();
-    Parent root = fxmll.load(is);
-    stage.setTitle("SudokuSolver");
-    stage.setScene(new Scene(root));
-    stage.show();
-  }
-
-  public static void main(String[] args) {
-    if(Modele.solve(0,0)) {
-      System.out.println("Résolution :");
-      Modele.afficherGrille();
+    
+    public static void main(String[] args) {
+        Application.launch(Main.class, args);
     }
-    else {
-      System.out.println("Grille impossible");
-      Modele.afficherGrille();
+    
+    
+    @Override
+    public void start(Stage stage) throws Exception {
+        Parent root = FXMLLoader.load(getClass().getResource("SudokuSolver.fxml"));
+        stage.setTitle("SudokuSolver");
+        stage.setScene(new Scene(root));
+        stage.show();
     }
-    launch(args);
-  }
 }
+
+
