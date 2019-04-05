@@ -1,5 +1,7 @@
 package sudoku;
 
+import java.util.Observable;
+
 public class Modele {
 
   public static int[][] grille =
