@@ -56,12 +56,16 @@ public class Controleur implements Initializable {
       for(int i = 0; i < 9; i++)
         for(int j = 0; j < 9; j++) {
           Modele.grille[i][j] = Integer.parseInt(areas[i][j].getText());
+          areas[i][j].setEditable(false);
         }
       Modele.solve(0,0);
       refreshDisplay();
       btnAction.setText("Modifier");
       lightswitch = !lightswitch;
     } else {
+      for(int i = 0; i < 9; i++)
+        for(int j = 0; j < 9; j++)
+          areas[i][j].setEditable(true);
       btnAction.setText("Résoudre");
       lightswitch = !lightswitch;
     }
